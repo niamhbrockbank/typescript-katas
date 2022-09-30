@@ -1,3 +1,11 @@
-export default function twoSum(): number[]{
-    return [42]
-}
+export default function twoSum(nums: number[], target: number): number[] {
+    for (let i = 0; i < nums.length - 1; i++){
+        for (let j = 0; j < nums.length; j++){
+            if (nums[i] + nums[j] === target){
+                return [i, j]
+            }
+        }
+    }
+
+    return [404, 404]
+};
