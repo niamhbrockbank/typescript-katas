@@ -32,70 +32,67 @@ find index of first #
 */
 
 interface outputObj {
-    [key: string]: string
-  }
-  
+  [key: string]: string;
+}
+
 export function extractParams(url: string): outputObj {
-    const outputObj: outputObj = {}
-    const startIndex = url.indexOf('#') + 1
-    let status = 'key'
-  
-    let key = ''
-    let value = ''
-  
-    for (let i = startIndex; i < url.length; i++) {
-      const char = url[i]
-      if (char !== '=' && char !== '&') {
-        if (status === 'key') {
-          key = key.concat(char)
-        }
-        else {
-          value = value.concat(char)
-        }
+  const outputObj: outputObj = {};
+  const startIndex = url.indexOf("#") + 1;
+  let status = "key";
+
+  let key = "";
+  let value = "";
+
+  for (let i = startIndex; i < url.length; i++) {
+    const char = url[i];
+    if (char !== "=" && char !== "&") {
+      if (status === "key") {
+        key = key.concat(char);
+      } else {
+        value = value.concat(char);
       }
-      else if (char === '=') {
-        status = 'value'
-      }
-      else if (char === '&') {
-        status = 'key'
-        outputObj[key] = value
-        key = ''
-        value = ''
-      }
+    } else if (char === "=") {
+      status = "value";
+    } else if (char === "&") {
+      status = "key";
+      outputObj[key] = value;
+      key = "";
+      value = "";
     }
-  
-    outputObj[key] = value
-  
-    return outputObj
   }
-  
-  /*
+
+  outputObj[key] = value;
+
+  return outputObj;
+}
+
+/*
   extract params with split
   */
-  
-  export function extractSplit(url: string): outputObj {
-    const outputObj: outputObj = {}
-    const paramsUrl = url.slice(url.indexOf('#') + 1)
-    const keyValPairs = paramsUrl.split('&')
-  
-    for (let keyValPair of keyValPairs) {
-      const keyValArr = keyValPair.split('=')
-      outputObj[keyValArr[0]] = keyValArr[1]
-    }
-  
-    return outputObj
+
+export function extractSplit(url: string): outputObj {
+  const outputObj: outputObj = {};
+  const paramsUrl = url.slice(url.indexOf("#") + 1);
+  const keyValPairs = paramsUrl.split("&");
+
+  for (let keyValPair of keyValPairs) {
+    const keyValArr = keyValPair.split("=");
+    outputObj[keyValArr[0]] = keyValArr[1];
   }
-  
-  /*
+
+  return outputObj;
+}
+
+/*
   extract params with reduce
   */
-  
-  export function extractReduce(url: string): outputObj {
-    const outputObj: outputObj = {}
-    const paramsUrl = url.slice(url.indexOf('#') + 1)
-    const keyValPairs = paramsUrl.split('&')
-  
-    //TO DO: write with reduce
-  
-    return outputObj
-  }
+
+export function extractReduce(url: string): outputObj {
+  const outputObj: outputObj = {};
+  const paramsUrl = url.slice(url.indexOf("#") + 1);
+  const keyValPairs = paramsUrl.split("&");
+
+  //TO DO: write with reduce
+
+  return outputObj;
+}

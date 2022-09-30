@@ -1,3 +1,3 @@
-import twoSum from './twoSum'
+import twoSum from "./twoSum";
 
 test.todo("find target");

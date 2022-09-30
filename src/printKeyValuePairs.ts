@@ -5,22 +5,22 @@ printAllKeyValuePairs
 */
 
 interface InputObject {
-    [name : string] : string
+  [name: string]: string;
+}
+
+function printAllKeyValuePairs(obj: InputObject): void {
+  for (let pair in obj) {
+    console.log(pair + " " + obj[pair]);
   }
-  
-  function printAllKeyValuePairs(obj : InputObject) : void{
-    for (let pair in obj){
-      console.log(pair + ' ' + obj[pair])
-    }
-  }
-  
-  //Tests
-  const characters = {
-    Bruce: "Hulk",
-    Peter: "Spiderman",
-    Ororo: "Storm"
-  };
-  
-  printAllKeyValuePairs(characters)
-  
-  console.log(Object.entries(characters))
+}
+
+//Tests
+const characters = {
+  Bruce: "Hulk",
+  Peter: "Spiderman",
+  Ororo: "Storm",
+};
+
+printAllKeyValuePairs(characters);
+
+console.log(Object.entries(characters));
