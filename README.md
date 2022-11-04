@@ -1,5 +1,7 @@
-# TypeScript Kata Template
+# TypeScript Katas
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+A collection of interesting katas that I have completed in TypeScript. 
 
-> This is part of Academy's technical curriculum for **The Mark**. All parts of that curriculum, including this project, are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
+Use ```yarn``` on initial setup to load dependencies. <br />
+Use ```yarn test``` to run jest tests that have been set up in all *.test.ts files. <br />
+Use ```yarn run ts-node src/<filename>``` to run individual files. <br />
