@@ -10,9 +10,10 @@ Write a function that multiplies two numbers, given as strings, and returns the 
 The return should not start with zeros.
 
 ## Examples
+
 ```
 multiply("2", "3") //"6"
 multiply("55", "12") //"660"
 ```
 
-*Hint:*
+_Hint:_
